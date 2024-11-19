@@ -10,11 +10,13 @@ import {
     IconField,
     InputIcon,
     InputText,
+    TabPanels,
 } from 'primevue';
 import { ref, defineProps } from 'vue';
 import Data from './partials/Data.vue';
 import Overview from './partials/Overview.vue';
 import Order from './partials/Order.vue';
+import { router } from '@inertiajs/vue3';
 
 defineProps({
     orders: Array,
@@ -45,6 +47,7 @@ const tabs = ref([
                             label="Refresh"
                             icon="pi pi-refresh"
                             severity="info"
+                            @click="router.reload({ only: ['orders'] })"
                         ></Button>
                         <Button label="Create Order" icon="pi pi-plus"></Button>
                     </div>
