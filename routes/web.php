@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -20,6 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/sales', [OrderController::class, 'index'])->middleware(['auth','verified'])->name('sales');
+Route::put('/sales/{order}', [OrderController::class,'update'])->middleware(['auth','verified']);
+Route::post('/sales/log/{orderId}', [LogController::class,'createLogForOrder'])->middleware(['auth','verified']);
+
+Route::post('/upload-image',[OrderController::class,'uploadImage']);
 
 Route::get('shipment', function () {
     return Inertia::render('shipment/Delivery');
