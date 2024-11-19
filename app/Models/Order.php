@@ -11,7 +11,7 @@ class Order extends Model
 
      protected $fillable = [
         'customer_id', 'price', 'payment_proof', 'shipping_fee',
-        'is_handled', 'handled_by', 'status', 'shipment_id', 'log_id'
+        'is_handled', 'handled_by', 'status', 'shipment_id', 'order_note'
     ];
 
     public function customer() {
@@ -30,7 +30,7 @@ class Order extends Model
         return $this->hasOne(Shipment::class);
     }
 
-    public function loggable() {
+    public function logs() {
         return $this->morphMany(Log::class, 'loggable');
     }
 }

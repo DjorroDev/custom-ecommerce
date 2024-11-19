@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('is_handled')->default(false);
             $table->foreignId('handled_by')->nullable()->constrained('users')->onDelete('set null');
             $table->string('status');
+            $table->text('order_note')->nullable();
             $table->foreignId('shipment_id')->nullable()->constrained()->onDelete('set null');
             $table->timestamps();
         });

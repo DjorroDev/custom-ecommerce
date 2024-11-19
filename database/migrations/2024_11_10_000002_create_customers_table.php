@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('kecamatan', 100)->nullable();
             $table->string('provinsi', 100)->nullable();
             $table->string('kodepos', 10)->nullable();
+            $table->string('gender', 10)->nullable();
             $table->string('full_address', 255);
             $table->string('phone_number_1', 20)->unique();
             $table->string('phone_number_2', 20)->unique()->nullable();

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->enum('log_type', ['order', 'shipment', 'call']);
-            $table->unsignedBigInteger('reference_id'); // reference to orders, shipments, etc.
+            $table->unsignedBigInteger('loggable_id'); // reference to orders, shipments, etc.
+            $table->string('loggable_type'); // reference to orders, shipments, etc.
             $table->string('description');
             $table->timestamps();
         });

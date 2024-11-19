@@ -20,12 +20,12 @@ class OrderFactory extends Factory
             'customer_id' => $this->faker->numberBetween(1, 2),
             'price' => $this->faker->randomFloat(2, 100000, 500000),
             'payment_proof' => $this->faker->imageUrl(),
-            'shipping_fee' => $this->faker->randomFloat(2, 5, 50),
+            'shipping_fee' => 10000,
             'is_handled' => false,
             'handled_by' => null,
             'status' => 'pending',
             'shipment_id' => null,
-            'log_id' => null,
+            'order_note' => null,
         ];
     }
 

@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'kelurahan' =>'Caringin',
             'kecamatan' => 'Legok',
             'kota' => 'Tangerang',
+            'provinsi' => 'Banten',
             'kodepos' => '15820',
             'phone_number_1' => '08131897934',
         ]);
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             'kelurahan' =>'BOJONG NANGKA',
             'kecamatan' => 'KELAPA DUA',
             'kota' => 'Tangerang',
+            'provinsi' => 'Banten',
             'kodepos' => '15810',
             'phone_number_1' => '085283897062',
             'phone_number_2' => '081219651492',
@@ -46,7 +48,8 @@ class DatabaseSeeder extends Seeder
 
 
         Product::create([
-            'name'=> 'Ginseng',
+            'name'=> 'Ginseng Anti kerut',
+            'stock' => '500',
             'price' => '200000'
         ]);
 
